@@ -1,36 +1,28 @@
 "use client";
 
 import Image from "next/image";
-import { useRouter } from "next/navigation";
-import React, { useEffect, useState } from "react";
+import React, { ReactNode, useEffect, useState } from "react";
 import BackButton from "../../ui/BackButton";
 
-type countryDataTypes = {
-  flags?: Array<{ png: string; svg: string }>;
-  name?: string;
-  nativeName?: string;
-  topLevelDomain?: Array<any>;
-  population?: any;
-  region?: string;
-  capital?: string;
-  subregion?: string;
-  languages?: Array<any>;
-  currrencies?: Array<any>;
-  borders?: Array<any>;
-};
-
-export default function Page({
-  params,
-  searchParams,
-}: {
-  params: { slug: string };
-  searchParams: { id: string };
-}) {
-  const router = useRouter();
+export default function Page({ params }: any) {
   const [data, setData] = useState<countryDataTypes[]>([]);
   const [filteredItems, setFilteredItems] = useState([]);
   const [county, setCountryName] = useState("");
   const [isLoading, setLoading] = useState(false);
+
+  type countryDataTypes = {
+    flags: any;
+    nativeName: ReactNode;
+    topLevelDomain: any;
+    population: ReactNode;
+    currencies: any;
+    region: ReactNode;
+    languages: any;
+    subregion: ReactNode;
+    capital: ReactNode;
+    borders: any;
+    name: ReactNode;
+  };
 
   useEffect(() => {
     setLoading(true);
@@ -71,14 +63,30 @@ export default function Page({
                     </div>
                     <div className="font-medium text-[14px] text-[#111517] dark:text-white">
                       Top Level Domain:{" "}
-                      {data[0]?.topLevelDomain.map((tld, i) => (
-                        <span
-                          className="font-extralight text-[11px] text-[#111517] dark:text-white mx-1"
-                          key={i}
-                        >
-                          {tld},
-                        </span>
-                      ))}
+                      {data[0]?.topLevelDomain.map(
+                        (
+                          tld:
+                            | string
+                            | number
+                            | boolean
+                            | React.ReactElement<
+                                any,
+                                string | React.JSXElementConstructor<any>
+                              >
+                            | React.ReactFragment
+                            | React.ReactPortal
+                            | null
+                            | undefined,
+                          i: React.Key | null | undefined
+                        ) => (
+                          <span
+                            className="font-extralight text-[11px] text-[#111517] dark:text-white mx-1"
+                            key={i}
+                          >
+                            {tld},
+                          </span>
+                        )
+                      )}
                     </div>
                   </div>
 
@@ -91,14 +99,32 @@ export default function Page({
                     </div>
                     <div className="font-medium text-[14px] text-[#111517] dark:text-white">
                       Currencies:{" "}
-                      {data[0]?.currencies.map((currency, i) => (
-                        <span
-                          className="font-extralight text-[11px] text-[#111517] dark:text-white mx-1"
-                          key={i}
-                        >
-                          {currency?.name},
-                        </span>
-                      ))}
+                      {data[0]?.currencies.map(
+                        (
+                          currency: {
+                            name:
+                              | string
+                              | number
+                              | boolean
+                              | React.ReactElement<
+                                  any,
+                                  string | React.JSXElementConstructor<any>
+                                >
+                              | React.ReactFragment
+                              | React.ReactPortal
+                              | null
+                              | undefined;
+                          },
+                          i: React.Key | null | undefined
+                        ) => (
+                          <span
+                            className="font-extralight text-[11px] text-[#111517] dark:text-white mx-1"
+                            key={i}
+                          >
+                            {currency?.name},
+                          </span>
+                        )
+                      )}
                     </div>
                   </div>
 
@@ -111,14 +137,32 @@ export default function Page({
                     </div>
                     <div className="font-medium text-[14px] text-[#111517] dark:text-white">
                       Languages:{" "}
-                      {data[0]?.languages.map((language, i) => (
-                        <span
-                          className="font-extralight text-[11px] text-[#111517] dark:text-white mx-1"
-                          key={i}
-                        >
-                          {language?.name},
-                        </span>
-                      ))}
+                      {data[0]?.languages.map(
+                        (
+                          language: {
+                            name:
+                              | string
+                              | number
+                              | boolean
+                              | React.ReactElement<
+                                  any,
+                                  string | React.JSXElementConstructor<any>
+                                >
+                              | React.ReactFragment
+                              | React.ReactPortal
+                              | null
+                              | undefined;
+                          },
+                          i: React.Key | null | undefined
+                        ) => (
+                          <span
+                            className="font-extralight text-[11px] text-[#111517] dark:text-white mx-1"
+                            key={i}
+                          >
+                            {language?.name},
+                          </span>
+                        )
+                      )}
                     </div>
                   </div>
 
@@ -145,14 +189,30 @@ export default function Page({
                       Border Countries
                     </div>
 
-                    {data[0]?.borders?.map((border, i) => (
-                      <div
-                        className="items-center justify-start rounded-md shadow-md bg-[#fff] dark:bg-[#2b3945] text-[#111517] dark:text-white py-[0.75em] px-[1.2em] text-[11px] font-extralight mx-2"
-                        key={i}
-                      >
-                        {border}
-                      </div>
-                    ))}
+                    {data[0]?.borders?.map(
+                      (
+                        border:
+                          | string
+                          | number
+                          | boolean
+                          | React.ReactElement<
+                              any,
+                              string | React.JSXElementConstructor<any>
+                            >
+                          | React.ReactFragment
+                          | React.ReactPortal
+                          | null
+                          | undefined,
+                        i: React.Key | null | undefined
+                      ) => (
+                        <div
+                          className="items-center justify-start rounded-md shadow-md bg-[#fff] dark:bg-[#2b3945] text-[#111517] dark:text-white py-[0.75em] px-[1.2em] text-[11px] font-extralight mx-2"
+                          key={i}
+                        >
+                          {border}
+                        </div>
+                      )
+                    )}
                   </div>
                 </div>
               </div>
