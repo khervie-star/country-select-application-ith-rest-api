@@ -1,9 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 400;
 }
 
 a {
@@ -15,12 +19,168 @@ a {
   box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* .nav {
+  width: 100vw;
+  height: 60px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 3em;
 }
+
+.nav a {
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+} */
+
+main {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  grid-gap: 0.5rem;
+  align-items: flex-start;
+  grid-auto-flow: row;
+  grid-auto-columns: minmax(260px, 1fr);
+  justify-content: space-evenly;
+  align-content: center;
+  gap: 3em;
+  column-gap: 5em;
+}
+
+/* .searchInput {
+  border: 0.5px solid white;
+  padding: 0 1em;
+  background-color: hsl(209, 23%, 22%);
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  height: 45px;
+} */
+
+/* .searchInput input {
+  border: none;
+  background-color: transparent;
+  color: white;
+} */
+/* .searchInput::placeholder {
+  font-weight: light;
+  color: white;
+  font-size: 14px;
+} */
+
+/* .searchInput input:focus,
+.searchInput input:hover {
+  outline: 0;
+} */
+
+/* select {
+  background: hsl(209, 23%, 22%);
+  font-style: normal;
+  font-weight: 500;
+  line-height: 28px;
+  letter-spacing: -0.1px;
+  font-feature-settings: "liga" off;
+  color: white;
+  box-sizing: border-box;
+  padding: 0.65rem;
+  margin-bottom: 2rem;
+  width: 100%;
+  border-radius: 8px;
+} */
+
+option {
+  background: hsl(209, 23%, 22%);
+  font-style: normal;
+  font-weight: 500;
+  line-height: 28px;
+  letter-spacing: -0.1px;
+  font-feature-settings: "liga" off;
+  color: #324a64;
+  padding: 0.7rem 1rem;
+}
+
+/* select:focus {
+  border: 0;
+  outline: none;
+}
+select:hover {
+  border: 0;
+} */
+/* @media ${device.mobileL} {
+    font-size: 14px;
+    line-height: 20px;
+  }
+`; */
+
+.country-section {
+  width: 100%;
+}
+
+.page-action-section {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 3em 0;
+}
+
+/* .country-card {
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  background-color: hsl(209, 23%, 22%);
+  height: 350px;
+  cursor: pointer;
+} */
+
+/* .flag {
+  background-color: transparent;
+  height: 150px;
+  position: relative;
+} */
+
+/* .country-description {
+  padding: 1em;
+} */
+
+/* .country-name {
+  font-weight: 700 !important;
+  margin: 1em 0;
+  font-size: 18px !important;
+} */
+
+/* .country-description div {
+  font-weight: lighter;
+  font-size: 14px;
+  margin: 0.5em 0;
+} */
+
+/* .country-description span {
+  font-weight: normal;
+  font-size: 14px;
+} */
+
+/* @media only screen and (max-width: 450px) {
+  .nav {
+    padding: 0 1em;
+  }
+  .nav a {
+    font-size: 16px;
+  }
+  .page-action-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 3em 0;
+  }
+  .searchInput {
+    margin: 1em 0;
+  }
+} */

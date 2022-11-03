@@ -2,6 +2,12 @@
 const nextConfig = {
   experimental: {
     appDir: true,
+    images: {
+      domains: ['flagcdn.com'],
+    },
+  },
+  images: {
+    domains: ['flagcdn.com', 'upload.wikimedia.org'],
   },
 }
 
