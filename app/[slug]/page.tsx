@@ -19,13 +19,13 @@ type countryDataTypes = {
   borders?: Array<any>;
 };
 
-const Country = ({
+export default function Page({
   params,
   searchParams,
 }: {
   params: { slug: string };
   searchParams: { id: string };
-}) => {
+}) {
   const router = useRouter();
   const [data, setData] = useState<countryDataTypes[]>([]);
   const [filteredItems, setFilteredItems] = useState([]);
@@ -162,6 +162,4 @@ const Country = ({
       </div>
     </>
   );
-};
-
-export default Country;
+}
